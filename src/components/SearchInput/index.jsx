@@ -1,13 +1,11 @@
-import { Component } from "react";
-import "./styles.css";
+import './styles.css';
+import P from 'prop-types';
 
-export class SearchInput extends Component {
-    render() {
-        const {handleChange, searchValue} = this.props;
-        return (<input type="search"
-        placeholder="Search 🔎"
-        onChange={handleChange}
-        value={searchValue}
-        ></input>);
-    };
-}
+export const SearchInput = ({ handleChange, searchValue }) => {
+    return <input type="search" placeholder="Search 🔎" onChange={handleChange} value={searchValue}></input>;
+};
+
+SearchInput.propTypes = {
+    handleChange: P.func.isRequired,
+    searchValue: P.string,
+};
